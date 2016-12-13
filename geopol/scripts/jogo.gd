@@ -11,9 +11,11 @@ func _ready():
 
 
 func on_b_pergunta_pressed(obj,pai):
-	print("Pressed " + str(obj)+ str(pai))
+	print("Pressed " + str(obj.right(5))+ \
+	" Pai: " + str(pai))
 
 
 func on_b_resposta_pressed(obj,pai):
-	print("Pressed " + str(obj)+ str(pai))
+	print("Pressed " + str(obj).right(5) + \
+	" Pai:" + str(pai))
 	pass # replace with function body

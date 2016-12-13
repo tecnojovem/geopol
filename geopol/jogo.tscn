@@ -61,7 +61,6 @@ margin/bottom = 286.0
 
 [node name="Perguntas" type="GridContainer" parent="Container"]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -349,7 +348,6 @@ script/script = ExtResource( 5 )
 
 [node name="Respostas" type="GridContainer" parent="Container"]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -665,16 +663,16 @@ enabled_focus_mode = 2
 shortcut = null
 textures/normal = ExtResource( 10 )
 
-[node name="Label" type="Label" parent="."]
+[node name="Placar" type="Label" parent="."]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 83.0
-margin/top = 428.0
-margin/right = 226.0
-margin/bottom = 442.0
+margin/left = 66.0
+margin/top = 432.0
+margin/right = 270.0
+margin/bottom = 446.0
 text = "Coloque o Placar Nesta  posicao"
 percent_visible = 1.0
 lines_skipped = 0
