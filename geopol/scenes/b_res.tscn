@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://sprites/carta-r-hi.png" type="Texture" id=1]
+[ext_resource path="res://sprites/carta-r-lo.png" type="Texture" id=2]
+[ext_resource path="res://scripts/resposta.gd" type="Script" id=3]
+
+[node name="b_res" type="TextureButton"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 50.0
+margin/top = 401.0
+margin/right = 90.0
+margin/bottom = 447.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 1 )
+textures/pressed = ExtResource( 2 )
+script/script = ExtResource( 3 )
+
+
