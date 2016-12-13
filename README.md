@@ -28,4 +28,12 @@ já foi dando o comando cd geopol
 
 
 
+# Colaboradores:
 
+Sophia <michaelis.sophia@yahoo.com.br>
+Lucas <lucas.rufino.3000@gmail.com>
+Michael <michaelmartins1234@hotmail.com>
+Karolyne <karollessa10@gmail.com>
+Gustavo <lgsouza152@gmail.com>
+Melissa <melissa.nobre00@gmail.com>
+Bruno <brunoareas99@hotmail.com>
