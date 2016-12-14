@@ -41,13 +41,22 @@ Uma vez editado e verificado o arquivo acima, é só copiar seu conteúdo para o
 GDScript de nome qa.gd. Veja o exemplo no código fonte.
 
 
-## Como usar o repostiório
+## Como usar o repostiório no Github para ajudar a desenvolver o jogo
 
-O git funciona segundo um fluxo onde você primeiro clona
-um repositório existente e depois disso você envia atualizações
-para o github, contendo suas contribuições, e também executa 
-periodicamente comandos para atualizar seu repositório local
+O git (que é o programa por trás do GitHUB) funciona segundo um fluxo 
+onde você primeiro clona um repositório existente, realiza atualizações nos seus arquivos,
+com suas contribuições pessoais, para então, depois disso, 
+enviar as atualizações para de volta para github, de modo que outros
+possam acessar suas contribuições. 
+
+Ao mesmo tempo,
+você deve executar periodicamente comandos para atualizar seu repositório local
 para receber as contribuições das outras pessoas.
+
+> Atenção: isso não é um Manual do git nem do GitHub, e visa somente ajudar
+pessoas iniciantes a contribuir com este projeto específico, por isso, este texto
+não contém as melhores práticas gerais para git.
+
 
 Então há:
 
