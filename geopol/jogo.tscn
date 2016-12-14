@@ -54,21 +54,22 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
-margin/left = -2.0
-margin/top = 28.0
-margin/right = 314.0
-margin/bottom = 286.0
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 320.0
+margin/bottom = 490.0
 
 [node name="Perguntas" type="GridContainer" parent="Container"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 22.0
-margin/top = 35.0
+margin/top = 11.0
 margin/right = 290.0
-margin/bottom = 131.0
+margin/bottom = 107.0
 custom_constants/vseparation = 4
 custom_constants/hseparation = 4
 columns = 8
@@ -348,14 +349,15 @@ script/script = ExtResource( 5 )
 
 [node name="Respostas" type="GridContainer" parent="Container"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 23.0
-margin/top = 136.0
-margin/right = 291.0
-margin/bottom = 232.0
+margin/left = 22.0
+margin/top = 118.0
+margin/right = 290.0
+margin/bottom = 214.0
 custom_constants/vseparation = 4
 custom_constants/hseparation = 4
 columns = 8
@@ -639,10 +641,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 104.0
-margin/top = 376.0
-margin/right = 144.0
-margin/bottom = 416.0
+margin/left = 98.0
+margin/top = 402.0
+margin/right = 138.0
+margin/bottom = 442.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -654,28 +656,50 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 182.0
-margin/top = 377.0
-margin/right = 222.0
-margin/bottom = 417.0
+margin/left = 195.0
+margin/top = 401.0
+margin/right = 235.0
+margin/bottom = 441.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 textures/normal = ExtResource( 10 )
 
-[node name="Placar" type="Label" parent="."]
+[node name="placar" type="Label" parent="."]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 66.0
-margin/top = 432.0
-margin/right = 270.0
-margin/bottom = 446.0
-text = "Coloque o Placar Nesta  posicao"
+margin/left = 83.0
+margin/top = 460.0
+margin/right = 226.0
+margin/bottom = 474.0
+text = "Coloque o Placar Aqui!"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="HSeparator" type="HSeparator" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 92.0
+margin/right = 320.0
+margin/bottom = 132.0
+
+[node name="HSeparator1" type="HSeparator" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 201.0
+margin/right = 320.0
+margin/bottom = 241.0
 
 
