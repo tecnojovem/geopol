@@ -9,14 +9,15 @@ const domain = "raw.githubusercontent.com"
 var qa={} 
 	
 func _ready():
+	pass
+
+func prepare():
 	http.connect("loading",self,"_on_loading")
 	http.connect("loaded",self,"_on_loaded")
 	if qa.size() == 0:
 		print("tentado ler QA de arquvio")
 		if (!load_game()):
 			http.get(domain,url,443,true)
-	pass
-
 
 func _on_loading(loaded,total):
 	var percent = loaded*100/total
