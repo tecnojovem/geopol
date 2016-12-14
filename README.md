@@ -38,7 +38,8 @@ certo, irá aparecer a mensagem "Valid JSON"
 ## Com inserir as perguntas e respostas no jogo.
 
 Uma vez editado e verificado o arquivo acima, é só copiar seu conteúdo para o arquivo
-GDScript de nome qa.gd. Veja o exemplo no código fonte.
+GDScript de nome `qa.gd`, existente na pasta `res://scripts/qa.gd` do projeto no Godot. 
+Veja o exemplo no código fonte.
 
 
 ## Como usar o repostiório no Github para ajudar a desenvolver o jogo
