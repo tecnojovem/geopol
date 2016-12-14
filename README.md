@@ -37,9 +37,15 @@ certo, irá aparecer a mensagem "Valid JSON"
 
 ## Com inserir as perguntas e respostas no jogo.
 
-Uma vez editado e verificado o arquivo acima, é só copiar seu conteúdo para o arquivo
-GDScript de nome `qa.gd`, existente na pasta `res://scripts/qa.gd` do projeto no Godot. 
-Veja o exemplo no código fonte.
+Há duas maneiras. 
+
+* Se o jogo for jogado em um dispositivo online (com acesso
+à Internet) a melhor formar é editar o arquivos questions.json aqui mesmo no 
+repositório. O arquivo está neste (link)[https://github.com/rgrcnh/geopol/blob/master/QA/questions.json]
+
+
+* Se o jogo for jogado em um dispositivo offine, o arquivo de QA deve ser copiado para  o arquivo
+GDScript de nome `qa.gd`, existente na pasta `res://scripts/qa.gd` do projeto no Godot. Neste caso, todo o conteudo deve ser atribuido a variável qa que está vazia (qa={}). Veja o exemplo no código fonte.
 
 
 ## Como usar o repostiório no Github para ajudar a desenvolver o jogo
