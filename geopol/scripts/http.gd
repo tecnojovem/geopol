@@ -28,7 +28,7 @@ func _load(params):
   OS.delay_msec(100)
   
  var headers = [
-  "User-Agent: Pirulo/1.0 (Godot)",
+  "User-Agent: User-Agent: Mozilla/4.0 (compatible; MSIE 5.5; Windows 98)",
   "Accept: */*"
  ]
  

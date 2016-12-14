@@ -40,12 +40,18 @@ certo, irá aparecer a mensagem "Valid JSON"
 Há duas maneiras. 
 
 * Se o jogo for jogado em um dispositivo online (com acesso
-à Internet) a melhor formar é editar o arquivos questions.json aqui mesmo no 
-repositório. O arquivo está neste (link)[https://github.com/rgrcnh/geopol/blob/master/QA/questions.json]
+à Internet) a melhor formar é editar o arquivo de QA é acessando o arquivo
+questions.json aqui mesmo no repositório do GitHub. O arquivo está 
+(neste link)[https://github.com/rgrcnh/geopol/blob/master/QA/questions.json].
+Edite e salve o conteúdo, se for o caso, confira se edição foi bem feita 
+usando o (JSONLint)[http://jsonlint.com/]
+Toda vez que o jogo é inicializado ele tenta buscar o arquivo questions.json, 
+de modo online, e caso ele encontre o arquivo, ele salva um cópia local.
+Então, para um jogo pegar uma atualização, é necessário que ele acesse à Internet ao menos uma vez.
 
 
-* Se o jogo for jogado em um dispositivo offine, o arquivo de QA deve ser copiado para  o arquivo
-GDScript de nome `qa.gd`, existente na pasta `res://scripts/qa.gd` do projeto no Godot. Neste caso, todo o conteudo deve ser atribuido a variável qa que está vazia (qa={}). Veja o exemplo no código fonte.
+* Se o jogo for jogado em um dispositivo offine (sem jamais acessar à Internet), o arquivo de QA deve ser copiado para  o arquivo
+GDScript de nome `qa.gd`, existente na pasta `res://scripts/qa.gd` do projeto no Godot. Neste caso, todo o conteúdo JSON deve ser atribuído à variável `qa` que está vazia (observe que `qa={}` no arquivo `qa.gd`). Veja o exemplo no código fonte.
 
 
 ## Como usar o repostiório no Github para ajudar a desenvolver o jogo

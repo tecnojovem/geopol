@@ -2,26 +2,32 @@ extends Node
 
 const qa_file = "user://questions.json"
 onready var http = preload("res://scenes/http.tscn").instance()
+
 const url="https://raw.githubusercontent.com/rgrcnh/geopol/master/QA/questions.json"
+const domain = "raw.githubusercontent.com"
 
 var qa={} 
 	
 func _ready():
+	http.connect("loading",self,"_on_loading")
+	http.connect("loaded",self,"_on_loaded")
 	if qa.size() == 0:
 		print("tentado ler QA de arquvio")
 		if (!load_game()):
-			http.get(url,443,true)
-	else:
-		save_game()
+			http.get(domain,url,443,true)
 	pass
 
 
 func _on_loading(loaded,total):
-    var percent = loaded*100/total
+	var percent = loaded*100/total
+	print ("loading " + str(percent) + " %")
 
 func _on_loaded(result):
-    var result_string = result.get_string_from_ascii()
-    print(result_string)
+	var result_string = result.get_string_from_ascii()
+	qa.parse_json(result_string)
+	save_game()
+	print("Perguntas salvas da Internet")
+	print(result_string)
 
 func load_game():
 	var file = File.new()
@@ -35,7 +41,7 @@ func load_game():
 			tot_file += file.get_line()
 		qa.parse_json(tot_file)
 		if qa.size() > 0:
-			print("linha" + str(qa))
+			print("Lido do arquivo: " + str(qa))
 		else: 
 			print("nao tinha nada em QA")
 			return 0
