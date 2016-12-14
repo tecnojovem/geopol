@@ -1,4 +1,5 @@
 # Geopol
+
 Jogo sobre perguntas e respostas com GODOT, para uso em geopolítica do petróleo.
 Feito com os alunos jovens aprendizes da instituição de ensino São Martinho,
 em 2016.
@@ -13,10 +14,23 @@ para receber as contribuições das outras pessoas.
 
 Então há:
 
-. há um repositório na Internet (no github), 
-. um repositório clonado no seu micro (local) 
-. uma área de trabalho (chamada de stage), que são os arquivos locais
+ . há um repositório na Internet (no github),
+
+ . um repositório clonado no seu micro (local),
+
+ . uma área de trabalho (chamada de stage), que são os arquivos locais
 no seu micro sobre os quais vocês está trabalhando.
+
+
+## Instalando o git
+
+caso o git não esteja instalado no seu Linux/Ubuntu, execute o comando abaixo:
+
+```
+sudo apt install git
+```
+
+## Fluxo de trabalho
 
 Existem sempre três coisas importantes que devem ser feitas: 
 
@@ -25,7 +39,7 @@ que você mesmo está fazendo nos seus arquivos, ou seja, atualizar do
 stage para o rep. local. Isso é feito com os comandos `git add <nome dos arquivos>`
 e com `git commit -m "seu comentario"`.
 
- * a segunda é enviar as atualizações do repositório local para o github.
+* a segunda é enviar as atualizações do repositório local para o github.
 de modo a compartilhar seus avanços com os outros.
 Isso é feito com o comando `git push origin master` 
 
@@ -40,6 +54,7 @@ Só envie quando você testar e certificar que está tudo ok!
 
 
 ### Para clonar o geopol
+
 Para clonar o repositório no linux, se já não foi feito antes, abra um 
 emulador terminal no Linux e digite os comandos abaixo:
 
