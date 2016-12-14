@@ -4,6 +4,43 @@ Jogo sobre perguntas e respostas com GODOT, para uso em geopolítica do petróle
 Feito com os alunos jovens aprendizes da instituição de ensino São Martinho,
 em 2016.
 
+## Como montar o arquivo de perguntas e respostas para carregar no Godot
+
+O arquivo de perguntas e repostas (doravante QA), tem o formato 
+JSON (javascript object notation) e tem que ser exatamente como o exemplo abaixo. 
+Não esqueça das chaves, das aspas e das vírgulas. Cada pergunta tem um número.
+Para testar se você escreveu o arquivo de forma correta, use o site (JSONLint)[http://jsonlint.com/], copie e cole o seu arquivo e clique em "Validade JSON". Se tudo der
+certo, irá aparecer a mensagem "Valid JSON"
+
+
+```json
+{
+"1": {
+	"q":"Qual é seu time?", 
+	"r":"Vasco"
+	}, 
+"2": {
+	"q":"Qual sua cor preferida?", 
+	"r":"Azul"
+	}, 
+"3":{
+	"q":"Onde você nasceu?", 
+	"r":"Rio de Janeiro"
+	}, 
+"4":{
+	"q":"Qual é seu nome?", 
+	"r":"Rogério"
+	}
+}
+
+```
+
+## Com inserir as perguntas e respostas no jogo.
+
+Uma vez editado e verificado o arquivo acima, é só copiar seu conteúdo para o arquivo
+GDScript de nome qa.gd. Veja o exemplo no código fonte.
+
+
 ## Como usar o repostiório
 
 O git funciona segundo um fluxo onde você primeiro clona
