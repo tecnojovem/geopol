@@ -1,8 +1,41 @@
 # Geopol
 
-Jogo sobre perguntas e respostas com GODOT, para uso em geopolítica do petróleo.
-Feito com os alunos jovens aprendizes da instituição de ensino São Martinho,
-em 2016.
+Geopol é uma inciativa que leva as tecnologias
+de games na direção do uso educacional e institucional, 
+especificamente nas instituições de ensino e na capacitação dos profissionais.
+
+Através de perguntas e respostas, misturando conceitos de jogo da memória,
+com jogos de desafio com tempo e pontos, o Geopol oferece uma alternativa
+na memorização dos conceitos ensinados.
+
+O termo Geopol vem da temática inicial aplicada ao jogo,
+que tem a ver com 
+(Geopolítica do Petróleo)[https://pt.wikipedia.org/wiki/Geopolítica_do_petróleo], 
+por conta da empresa que patrocinou esta iniciativa.
+
+Entretanto, o Geopol foi criado para que sejam carregados dinamicamente
+perguntas e respostas de qualquer temática. O código fonte está todo
+disponível, facilitando trocar a arte para ficar coerente com o interesse.
+
+Este jogo foi feito com o esforço e a criatividade dos alunos do programa Jovem Aprendiz,
+em conjunto com o programa de voluntariado 
+(Tecno Jovem)[http://www.corais.org/tecnojovem2016/], 
+nesta empresa que patrocinou o trabalho. 
+
+O alunos selecionados para o programa
+são todos da (Instituição São Martinho)[http://www.saomartinho.org.br/saomartinho/].
+
+Foi todo desenvolvido usando o (Engine de Jogos Godot)[https://godotengine.org/],
+que foi ensinado aos alunos durante todas as 8 aulas de 4 horas, em 2016.
+
+Chegar a este jogo com somente 24h de trabalho, incluindo o tempo para ensinar 
+os conhecimentos na plataforma 
+(Godot)[https://godotengine.org/], inclusive a linguagem GDScript (parecida com Python), 
+mostra não somente a facilidade da plataforma.
+
+Mostra, com muito mais ênfase, a capacidade dos nossos Jovens, que fizeram o trabalho ser muito
+prazeroso para os seus instrutores e colaboradores.
+
 
 ## Como montar o arquivo de perguntas e respostas para carregar no Godot
 
@@ -163,10 +196,17 @@ git push origin master
 
 # Colaboradores:
 
-Sophia <michaelis.sophia@yahoo.com.br>,
-Lucas <lucas.rufino.3000@gmail.com>,
-Michael <michaelmartins1234@hotmail.com>,
-Karolyne <karollessa10@gmail.com>,
-Gustavo <lgsouza152@gmail.com>,
-Melissa <melissa.nobre00@gmail.com>,
-Bruno <brunoareas99@hotmail.com>,
+## Alunos do programa Jovem Aprendiz
+* Sophia <michaelis.sophia@yahoo.com.br>
+* Lucas <lucas.rufino.3000@gmail.com>,
+* Michael <michaelmartins1234@hotmail.com>,
+* Karolyne <karollessa10@gmail.com>,
+* Gustavo <lgsouza152@gmail.com>,
+* Melissa <melissa.nobre00@gmail.com>,
+* Bruno <brunoareas99@hotmail.com>,
+
+## Instrutores colaboradores:
+
+* Glauber Bolzan de Assis Silva (godot especialista & arte)
+* Rogério "rgrcnh" Ferreira da Cunha (godot especialista & programação)
+* Antony Devalle (roteiro e história de Geo Política)
