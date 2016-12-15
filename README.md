@@ -10,7 +10,7 @@ na memorização dos conceitos ensinados.
 
 O termo Geopol vem da temática inicial aplicada ao jogo,
 que tem a ver com 
-(Geopolítica do Petróleo)[https://pt.wikipedia.org/wiki/Geopolítica_do_petróleo], 
+[Geopolítica do Petróleo](https://pt.wikipedia.org/wiki/Geopolítica_do_petróleo), 
 por conta da empresa que patrocinou esta iniciativa.
 
 Entretanto, o Geopol foi criado para que sejam carregados dinamicamente
@@ -19,22 +19,22 @@ disponível, facilitando trocar a arte para ficar coerente com o interesse.
 
 Este jogo foi feito com o esforço e a criatividade dos alunos do programa Jovem Aprendiz,
 em conjunto com o programa de voluntariado 
-(Tecno Jovem)[http://www.corais.org/tecnojovem2016/], 
+[Tecno Jovem](http://www.corais.org/tecnojovem2016/), 
 nesta empresa que patrocinou o trabalho. 
 
 O alunos selecionados para o programa
-são todos da (Instituição São Martinho)[http://www.saomartinho.org.br/saomartinho/].
+são todos da [Instituição São Martinho](http://www.saomartinho.org.br/saomartinho/).
 
-Foi todo desenvolvido usando o (Engine de Jogos Godot)[https://godotengine.org/],
+Foi todo desenvolvido usando o [Engine de Jogos Godot](https://godotengine.org/),
 que foi ensinado aos alunos durante todas as 8 aulas de 4 horas, em 2016.
 
 Chegar a este jogo com somente 24h de trabalho, incluindo o tempo para ensinar 
 os conhecimentos na plataforma 
-(Godot)[https://godotengine.org/], inclusive a linguagem GDScript (parecida com Python), 
+[Godot](https://godotengine.org/), inclusive a linguagem GDScript (parecida com Python  :snake:), 
 mostra não somente a facilidade da plataforma.
 
 Mostra, com muito mais ênfase, a capacidade dos nossos Jovens, que fizeram o trabalho ser muito
-prazeroso para os seus instrutores e colaboradores.
+prazeroso para os seus instrutores e colaboradores. :blush:
 
 
 ## Como montar o arquivo de perguntas e respostas para carregar no Godot
@@ -42,7 +42,9 @@ prazeroso para os seus instrutores e colaboradores.
 O arquivo de perguntas e repostas (doravante QA), tem o formato 
 JSON (javascript object notation) e tem que ser exatamente como o exemplo abaixo. 
 Não esqueça das chaves, das aspas e das vírgulas. Cada pergunta tem um número.
-Para testar se você escreveu o arquivo de forma correta, use o site (JSONLint)[http://jsonlint.com/], copie e cole o seu arquivo e clique em "Validade JSON". Se tudo der
+Para testar se você escreveu o arquivo de forma correta,
+use o site [JSONLint](http://jsonlint.com/), copie e cole o seu arquivo 
+e clique em "Validade JSON". Se tudo der
 certo, irá aparecer a mensagem "Valid JSON"
 
 
@@ -75,9 +77,10 @@ Há duas maneiras.
 * Se o jogo for jogado em um dispositivo online (com acesso
 à Internet) a melhor formar é editar o arquivo de QA é acessando o arquivo
 questions.json aqui mesmo no repositório do GitHub. O arquivo está 
-(neste link)[https://github.com/rgrcnh/geopol/blob/master/QA/questions.json].
+[neste link](https://github.com/rgrcnh/geopol/blob/master/QA/questions.json).
+
 Edite e salve o conteúdo, se for o caso, confira se edição foi bem feita 
-usando o (JSONLint)[http://jsonlint.com/]
+usando o [JSONLint](http://jsonlint.com/)
 Toda vez que o jogo é inicializado ele tenta buscar o arquivo questions.json, 
 de modo online, e caso ele encontre o arquivo, ele salva um cópia local.
 Então, para um jogo pegar uma atualização, é necessário que ele acesse à Internet ao menos uma vez.
@@ -106,12 +109,10 @@ não contém as melhores práticas gerais para git.
 
 Então há:
 
- . há um repositório na Internet (no github),
-
- . um repositório clonado no seu micro (local),
-
- . uma área de trabalho (chamada de stage), que são os arquivos locais
-no seu micro sobre os quais vocês está trabalhando.
+ * há um repositório na Internet (no github),
+ * um repositório clonado no seu micro (local),
+ * uma área de trabalho (chamada de stage), que são os arquivos locais 
+ no seu micro sobre os quais vocês está trabalhando.
 
 
 ## Instalando o git
@@ -194,7 +195,7 @@ git push origin master
 
 
 
-# Colaboradores:
+# Pessoas:
 
 ## Alunos do programa Jovem Aprendiz
 * Sophia <michaelis.sophia@yahoo.com.br>
