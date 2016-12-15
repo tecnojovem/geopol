@@ -33,8 +33,7 @@ Chegar a este jogo com somente 24h de trabalho, incluindo o tempo para ensinar
 os conhecimentos na plataforma 
 [Godot](https://godotengine.org/), passando pela linguagem GDScript (parecida com Python  :snake:), mostra não somente a facilidade da plataforma.
 
-Mostra, com muito mais ênfase, a capacidade dos nossos Jovens, que fizeram o trabalho ser muito
-prazeroso para os seus instrutores e colaboradores. :blush:
+Mostra, com muito mais ênfase, a capacidade dos nossos Jovens, que fizeram um excelente trabalho. :blush:
 
 
 ## Como montar o arquivo de perguntas e respostas para carregar no Godot
@@ -208,6 +207,7 @@ git push origin master
 
 ## Instrutores colaboradores:
 
+* Antony Devalle (roteiro & consultoria em História do Petróleo)
 * Glauber Bolzan de Assis Silva (Godot especialista, arte, roteiro & portabilidade)
 * Rogério "rgrcnh" Ferreira da Cunha (Godot especialista, programação & prototipagem)
-* Antony Devalle (roteiro & consultoria em História do Petróleo)
+
