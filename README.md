@@ -52,19 +52,19 @@ certo, irá aparecer a mensagem "Valid JSON"
 {
 "1": {
 	"q":"Qual é seu time?", 
-	"r":"Vasco"
+	"r":"Chape"
 	}, 
 "2": {
 	"q":"Qual sua cor preferida?", 
-	"r":"Azul"
+	"r":"Verde"
 	}, 
 "3":{
 	"q":"Onde você nasceu?", 
-	"r":"Rio de Janeiro"
+	"r":"Santa Catarina"
 	}, 
 "4":{
 	"q":"Qual é seu nome?", 
-	"r":"Rogério"
+	"r":"José"
 	}
 }
 
