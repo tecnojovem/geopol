@@ -28,14 +28,19 @@ const FINISHED = 4
 var game_status = INIT
 
 func _ready():
+
+	qa.connect("nova_pr_disponivel",self,"_nova_pr_disponivel")
 	qa.prepare()
 	init_panel()
-	PERGS=qa.qa.size()
+	PERGS=qa.get_pr().size()
 	DECKS=get_node("Container/Respostas").get_child_count()
 	print("Total de perguntas carregadas: " + str(PERGS))
 	print ("Total de decks encontrados: " + str(DECKS))
 	init_deck()
 	game_status = BEGIN
+	
+func _nova_pr_disponivel(q):
+	get_node("Popups/dlgnewpr").show_modal(true)
 	
 func init_panel():
 	if (game_status == RUN):
@@ -145,13 +150,14 @@ func init_deck():
 # ou seja, pode ter menos perguntas que cartas e podem ter perguntas repetidas
 	# nao permite repetir QR's:
 	var done={}
+	var pr = qa.get_pr()
 	if (PERGS >= DECKS):
 		for i in range(DECKS):
 			while(true):
 				randomize()
 				var rand = floor(rand_range(0, PERGS)) + 1
 				if done.has(str(rand)): continue
-				rand_questions[i+1] = qa.qa[str(rand)]
+				rand_questions[i+1] = pr[str(rand)]
 				done[str(rand)]=i+1
 				#print ("Saiu rand: " + str(rand))
 				break
@@ -160,7 +166,7 @@ func init_deck():
 		for i in range(DECKS):
 			randomize()
 			var rand = floor(rand_range(0,PERGS)) + 1
-			rand_questions[i+1] = qa.qa[str(rand)]
+			rand_questions[i+1] = pr[str(rand)]
 
 	# separa as perguntas das respostas
 	# para cada deck ficar com uma ordem aleatoria
@@ -182,3 +188,13 @@ func init_deck():
 			respostas[i+1] = rand_questions[int(rand_n)]
 			done[str(rand_n)] = i+1
 			break
+
+func _on_dlgnewpr_confirmed():
+	init_panel()
+	PERGS=qa.get_pr().size()
+	DECKS=get_node("Container/Respostas").get_child_count()
+	print("Total de perguntas carregadas: " + str(PERGS))
+	print ("Total de decks encontrados: " + str(DECKS))
+	init_deck()
+	game_status = BEGIN
+	pass # replace with function body
