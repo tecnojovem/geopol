@@ -27,11 +27,11 @@ são todos da [Instituição São Martinho](http://www.saomartinho.org.br/saomar
 
 Foi todo desenvolvido usando o [Engine de Jogos Godot](https://godotengine.org/),
 que foi ensinado aos alunos durante todas as 8 aulas de 4 horas, em 2016.
+As plataformas alvos deste jogo são celulares e tablets com Android & IOs.
 
 Chegar a este jogo com somente 24h de trabalho, incluindo o tempo para ensinar 
 os conhecimentos na plataforma 
-[Godot](https://godotengine.org/), inclusive a linguagem GDScript (parecida com Python  :snake:), 
-mostra não somente a facilidade da plataforma.
+[Godot](https://godotengine.org/), passando pela linguagem GDScript (parecida com Python  :snake:), mostra não somente a facilidade da plataforma.
 
 Mostra, com muito mais ênfase, a capacidade dos nossos Jovens, que fizeram o trabalho ser muito
 prazeroso para os seus instrutores e colaboradores. :blush:
@@ -208,6 +208,6 @@ git push origin master
 
 ## Instrutores colaboradores:
 
-* Glauber Bolzan de Assis Silva (godot especialista & arte)
-* Rogério "rgrcnh" Ferreira da Cunha (godot especialista & programação)
-* Antony Devalle (roteiro e história de Geo Política)
+* Glauber Bolzan de Assis Silva (Godot especialista, arte, roteiro & portabilidade)
+* Rogério "rgrcnh" Ferreira da Cunha (Godot especialista, programação & prototipagem)
+* Antony Devalle (roteiro & consultoria em História do Petróleo)
