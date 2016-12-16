@@ -6,7 +6,7 @@ var rand_questions={}
 var quesitos={}
 var respostas={}
 
-var score_certos = 15 
+var score_certos = 0 
 var score_errados = 0
 var total_score = 0
 var total_tentativas = 0
@@ -42,7 +42,7 @@ func start_game():
 	DECKS=get_node("Container/Respostas").get_child_count()
 	game_status = RUN
 	total_score = 0
-	score_certos = 15
+	score_certos = 0
 	score_errados = 0
 	total_tentativas = 0
 	for node in get_node("Container/Respostas").get_children():
