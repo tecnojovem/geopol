@@ -14,5 +14,9 @@
 "2":{
 	"q":"Qual é seu nome", 
 	"r":"Rogério"
+	},
+ "5":{	
+	"q":"Quais são as cores da bandeira do Brasil",
+	"r":"Verde, Amarelo, Azul e Branco"
 	}
 }
