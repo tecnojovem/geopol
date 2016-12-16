@@ -5,5 +5,5 @@ extends TextureButton
 # var b = "textvar"
 
 func _ready():
-	connect("pressed",get_node("/root/jogo"),"on_b_pergunta_pressed",[get_name(), get_parent().get_name()])
+	connect("pressed",get_node("/root/jogo"),"_on_b_pergunta_pressed",[get_name(), get_parent().get_name()])
 	pass
