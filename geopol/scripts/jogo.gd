@@ -33,8 +33,6 @@ func _ready():
 	init_panel()
 	PERGS=qa.get_pr().size()
 	DECKS=get_node("Container/Respostas").get_child_count()
-	print("Total de perguntas carregadas: " + str(PERGS))
-	print ("Total de decks encontrados: " + str(DECKS))
 	init_deck()
 	game_status = BEGIN
 	
@@ -42,8 +40,6 @@ func start_game():
 	print("Play!")
 	PERGS=qa.get_pr().size()
 	DECKS=get_node("Container/Respostas").get_child_count()
-	print("Total de perguntas carregadas: " + str(PERGS))
-	print ("Total de decks encontrados: " + str(DECKS))
 	game_status = RUN
 	total_score = 0
 	score_certos = 15
@@ -54,8 +50,6 @@ func start_game():
 	for node in get_node("Container/Perguntas").get_children():
 		node.show()
 	get_node("placar").set_text('Pontos Totais:' + str(total_score))
-	get_node("playbutton").set_disabled(true)
-	get_node("playbutton").hide()
 	get_node("Timer").start()
 	get_node("tempo").set_text(str(0))
 	init_panel()	
@@ -91,15 +85,17 @@ func check_and_end():
 		total_score = int(10*(total_score + metrica))
 		get_node("placar").set_text('Pontos Totais:' + str(total_score))
 		get_node("Timer").stop()
-		get_node("playbutton").set_disabled(false)
-		get_node("playbutton").show()
 		get_node("Container/Respostas").hide()
 		get_node("Container/Perguntas").hide()
 		get_node("Container/lbl_reposta").hide()
 		get_node("Container/lbl_pergunta").hide()
 		get_node("certo").show()
 		get_node("errado").show()	
-					
+		
+		get_node("playbutton").set_disabled(false)
+		get_node("playbutton").show()
+
+										
 func _on_b_pergunta_pressed(obj,pai):
 	if (game_status != RUN): return
 	get_node("Container/Perguntas").hide()
@@ -144,6 +140,8 @@ func _on_errado_pressed():
 	check_and_end()
 	
 func _on_playbutton_pressed():
+	get_node("playbutton").set_disabled(true)
+	get_node("playbutton").hide()
 	start_game()
 
 func _on_Timer_timeout():
@@ -164,6 +162,7 @@ func _on_dlgnewpr_confirmed():
 func _on_ajuda_pressed():
 	game_status = PAUSED
 	get_node("/root/jogo/Popups/dlghelp").show()
+
 	
 func init_deck():
 # sorteia as perguntas existentes por quantos cartas tiverem
@@ -208,3 +207,26 @@ func init_deck():
 			respostas[i+1] = rand_questions[int(rand_n)]
 			done[str(rand_n)] = i+1
 			break
+
+
+
+func _on_shin_animation_started( name ):
+	pass
+
+
+func _on_shin_finished():
+	var min_x = get_node("playbutton/p1").get_pos().x
+	var max_x = get_node("playbutton/p3").get_pos().x
+	var min_y = get_node("playbutton/p1").get_pos().y
+	var max_y = get_node("playbutton/p2").get_pos().y
+	
+	randomize()
+	get_node("playbutton/estrela").set_pos(Vector2(rand_range(min_x,max_x),rand_range(min_y,max_y)))	
+	get_node("playbutton/shin").play("star_shining")
+	
+	pass # replace with function body
+
+
+func _on_playbutton_draw():
+	get_node("playbutton/shin").play("star_shining")
+	pass # replace with function body
