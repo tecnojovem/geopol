@@ -15,8 +15,12 @@
 	"q":"Qual é seu nome", 
 	"r":"Rogério"
 	},
- "5":{	
+"5":{	
 	"q":"Quais são as cores da bandeira do Brasil",
 	"r":"Verde, Amarelo, Azul e Branco"
+	},
+"6":{
+	"q":"Teste de inclusão de uma nova pergunta. Funcionou?",
+	"r":"Sim!!!"
 	}
 }
