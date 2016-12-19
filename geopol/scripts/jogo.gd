@@ -19,6 +19,8 @@ var deck_r_clicked = 0
 var PERGS = 0 # numero de perguntas no json
 var DECKS = 0 # numero de cartas
 
+var sounds = true
+
 const INIT     = 0
 const BEGIN    = 1
 const RUN      = 2
@@ -40,6 +42,7 @@ func start_game():
 	print("Play!")
 	PERGS=qa.get_pr().size()
 	DECKS=get_node("Container/Respostas").get_child_count()
+	init_deck()
 	game_status = RUN
 	total_score = 0
 	score_certos = 0
@@ -56,16 +59,16 @@ func start_game():
 	
 func init_panel():
 	if (game_status == RUN):
-		get_node("Container/Respostas").hide()
+		get_node("Container/Respostas").show()
 		get_node("Container/Perguntas").show()
-		get_node("Container/lbl_reposta").hide()
+		get_node("Container/lbl_resposta").hide()
 		get_node("Container/lbl_pergunta").hide()
 		get_node("certo").hide()
 		get_node("errado").hide()
 	if (game_status == BEGIN or game_status == FINISHED): 
 		get_node("Container/Respostas").show()
 		get_node("Container/Perguntas").show()
-		get_node("Container/lbl_reposta").hide()
+		get_node("Container/lbl_resposta").hide()
 		get_node("Container/lbl_pergunta").hide()
 		get_node("certo").show()
 		get_node("errado").show()	
@@ -79,6 +82,7 @@ func refresh_label():
 	
 func check_and_end():
 	if score_certos == DECKS:
+		sounds and get_tree().get_root().get_node("jogo").get_node("SamplePlayer").play("game_end")
 		game_status = BEGIN
 		total_score = total_tentativas + score_errados
 		var metrica = DECKS/sqrt(int(get_node("tempo").get_text()))
@@ -87,7 +91,7 @@ func check_and_end():
 		get_node("Timer").stop()
 		get_node("Container/Respostas").hide()
 		get_node("Container/Perguntas").hide()
-		get_node("Container/lbl_reposta").hide()
+		get_node("Container/lbl_resposta").hide()
 		get_node("Container/lbl_pergunta").hide()
 		get_node("certo").show()
 		get_node("errado").show()	
@@ -95,37 +99,48 @@ func check_and_end():
 		get_node("playbutton").set_disabled(false)
 		get_node("playbutton").show()
 
-										
+func test_and_show_buttons():
+	if get_node("Container/lbl_pergunta").is_visible() and \
+	get_node("Container/lbl_resposta").is_visible():
+		get_node("errado").show()
+		get_node("certo").show()
+	
 func _on_b_pergunta_pressed(obj,pai):
 	if (game_status != RUN): return
-	get_node("Container/Perguntas").hide()
-	get_node("Container/Respostas").show()
+	sounds and get_tree().get_root().get_node("jogo").get_node("SamplePlayer").play("card")
+	#get_node("Container/Perguntas").show()
+	#get_node("Container/Respostas").show()
 	deck_q_clicked = str(obj)
 	var x = str(obj).right(5)
 	get_node("Container/lbl_pergunta").set_text(quesitos[int(x)]['q'])
 	q_clicked = quesitos[int(x)]
+	get_node("Container/Perguntas").hide()
 	get_node("Container/lbl_pergunta").show()
+	test_and_show_buttons()
 
 func _on_b_resposta_pressed(obj,pai):
 	if (game_status != RUN): return
-	get_node("Container/Respostas").hide()
+	sounds and get_tree().get_root().get_node("jogo").get_node("SamplePlayer").play("card")
+	#get_node("Container/Respostas").hide()
 	deck_r_clicked = str(obj)
 	var x = str(obj).right(5)
-	get_node("Container/lbl_reposta").set_text(respostas[int(x)]['r'])
+	get_node("Container/lbl_resposta").set_text(respostas[int(x)]['r'])
 	r_clicked = respostas[int(x)]
-	get_node("Container/lbl_reposta").show()
-	get_node("certo").show()
-	get_node("errado").show()
+	get_node("Container/Respostas").hide()
+	get_node("Container/lbl_resposta").show()
+	test_and_show_buttons()
 
 func _on_certo_pressed():
 	if (game_status != RUN): return
 	total_tentativas += 1
 	if (q_clicked == r_clicked):
 		score_certos += 1
+		sounds and get_tree().get_root().get_node("jogo").get_node("SamplePlayer").play("opt_ok")
 		get_node("Container/Perguntas/"+deck_q_clicked).hide()
 		get_node("Container/Respostas/"+deck_r_clicked).hide()
 	else:
 		score_errados += 1
+		sounds and get_tree().get_root().get_node("jogo").get_node("SamplePlayer").play("opt_error")
 	refresh_label()
 	init_panel()
 	check_and_end()
@@ -135,11 +150,13 @@ func _on_errado_pressed():
 	total_tentativas += 1
 	if (q_clicked == r_clicked):
 		score_errados += 1
+		sounds and get_tree().get_root().get_node("jogo").get_node("SamplePlayer").play("opt_error")
 	refresh_label()
 	init_panel()
 	check_and_end()
 	
 func _on_playbutton_pressed():
+	sounds and get_tree().get_root().get_node("jogo").get_node("SamplePlayer").play("game_start")
 	get_node("playbutton").set_disabled(true)
 	get_node("playbutton").hide()
 	start_game()
@@ -229,4 +246,24 @@ func _on_shin_finished():
 
 func _on_playbutton_draw():
 	get_node("playbutton/shin").play("star_shining")
+	pass # replace with function body
+
+
+func _on_som_pressed():
+	if get_node("som").is_pressed():
+		sounds = true
+		print ("pressed")
+	else:
+		sounds = false
+		print("Not pressed")
+	pass # replace with function body
+
+
+func _on_refresh_pressed():
+	get_node("Popups/refresh_confirm").show_modal(true)
+
+# refresh foi confirmado
+func _on_confirm_confirmed():
+	sounds and get_tree().get_root().get_node("jogo").get_node("SamplePlayer").play("game_start")
+	start_game()
 	pass # replace with function body

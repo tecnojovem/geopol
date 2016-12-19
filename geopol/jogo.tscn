@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=1]
+[gd_scene load_steps=27 format=1]
 
 [ext_resource path="res://scripts/jogo.gd" type="Script" id=1]
 [ext_resource path="res://sprites/jogo-geo-bg.png" type="Texture" id=2]
@@ -18,10 +18,24 @@
 [ext_resource path="res://sprites/shine3.png" type="Texture" id=16]
 [ext_resource path="res://sprites/shine4.png" type="Texture" id=17]
 [ext_resource path="res://animations/star_shining.tres" type="Animation" id=18]
+[ext_resource path="res://sounds/card.wav" type="Sample" id=19]
+[ext_resource path="res://sounds/game_end.wav" type="Sample" id=20]
+[ext_resource path="res://sounds/game_start.wav" type="Sample" id=21]
+[ext_resource path="res://sounds/opt_error.wav" type="Sample" id=22]
+[ext_resource path="res://sounds/opt_ok.wav" type="Sample" id=23]
+[ext_resource path="res://sprites/refresh.png" type="Texture" id=24]
 
 [sub_resource type="SpriteFrames" id=1]
 
 animations = [ { "frames":[ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ], "loop":true, "name":"default", "speed":4.0 } ]
+
+[sub_resource type="SampleLibrary" id=2]
+
+samples/card = { "db":0.0, "pitch":1.0, "sample":ExtResource( 19 ) }
+samples/game_end = { "db":0.0, "pitch":1.0, "sample":ExtResource( 20 ) }
+samples/game_start = { "db":0.0, "pitch":1.0, "sample":ExtResource( 21 ) }
+samples/opt_error = { "db":0.0, "pitch":1.0, "sample":ExtResource( 22 ) }
+samples/opt_ok = { "db":0.0, "pitch":1.0, "sample":ExtResource( 23 ) }
 
 [node name="jogo" type="Node2D"]
 
@@ -62,6 +76,7 @@ max_lines_visible = -1
 
 [node name="Container" type="Container" parent="."]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -78,13 +93,14 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 2.0
+margin/left = 18.0
 margin/top = 38.0
-margin/right = 320.0
-margin/bottom = 89.0
+margin/right = 293.0
+margin/bottom = 128.0
 text = "Uma pergunta de teste"
 align = 1
 valign = 1
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -97,10 +113,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 22.0
-margin/top = 118.0
-margin/right = 290.0
-margin/bottom = 214.0
+margin/left = 24.0
+margin/top = 172.0
+margin/right = 292.0
+margin/bottom = 268.0
 __meta__ = { "_edit_group_":true }
 
 [node name="b_res1" type="TextureButton" parent="Container/Respostas"]
@@ -375,20 +391,21 @@ textures/normal = ExtResource( 3 )
 textures/pressed = ExtResource( 4 )
 script/script = ExtResource( 5 )
 
-[node name="lbl_reposta" type="Label" parent="Container"]
+[node name="lbl_resposta" type="Label" parent="Container"]
 
 visibility/visible = false
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 1.0
+margin/left = 18.0
 margin/top = 142.0
-margin/right = 319.0
-margin/bottom = 193.0
-text = "Uma resposta de teste"
+margin/right = 300.0
+margin/bottom = 247.0
+text = "Uma resposta de teste com tamanho grande pra ver se o label vai fazer wrapp, também para estimar quantos caracteres podem estar na pergunta"
 align = 1
 valign = 1
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -399,10 +416,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 272.0
-margin/top = 415.0
-margin/right = 295.0
-margin/bottom = 458.0
+margin/left = 257.0
+margin/top = 438.0
+margin/right = 288.0
+margin/bottom = 469.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -428,10 +445,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 22.0
-margin/top = 11.0
-margin/right = 52.0
-margin/bottom = 57.0
+margin/left = 24.0
+margin/top = 65.0
+margin/right = 54.0
+margin/bottom = 111.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -445,10 +462,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 56.0
-margin/top = 11.0
-margin/right = 86.0
-margin/bottom = 57.0
+margin/left = 58.0
+margin/top = 65.0
+margin/right = 88.0
+margin/bottom = 111.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -462,10 +479,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 90.0
-margin/top = 11.0
-margin/right = 120.0
-margin/bottom = 57.0
+margin/left = 92.0
+margin/top = 65.0
+margin/right = 122.0
+margin/bottom = 111.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -479,10 +496,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 124.0
-margin/top = 11.0
-margin/right = 154.0
-margin/bottom = 57.0
+margin/left = 126.0
+margin/top = 65.0
+margin/right = 156.0
+margin/bottom = 111.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -496,10 +513,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 158.0
-margin/top = 11.0
-margin/right = 188.0
-margin/bottom = 57.0
+margin/left = 160.0
+margin/top = 65.0
+margin/right = 190.0
+margin/bottom = 111.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -513,10 +530,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 192.0
-margin/top = 11.0
-margin/right = 222.0
-margin/bottom = 57.0
+margin/left = 194.0
+margin/top = 65.0
+margin/right = 224.0
+margin/bottom = 111.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -530,10 +547,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 226.0
-margin/top = 11.0
-margin/right = 256.0
-margin/bottom = 57.0
+margin/left = 228.0
+margin/top = 65.0
+margin/right = 258.0
+margin/bottom = 111.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -547,10 +564,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 260.0
-margin/top = 11.0
-margin/right = 290.0
-margin/bottom = 57.0
+margin/left = 262.0
+margin/top = 65.0
+margin/right = 292.0
+margin/bottom = 111.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -564,10 +581,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 22.0
-margin/top = 61.0
-margin/right = 52.0
-margin/bottom = 107.0
+margin/left = 24.0
+margin/top = 115.0
+margin/right = 54.0
+margin/bottom = 161.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -581,10 +598,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 56.0
-margin/top = 61.0
-margin/right = 86.0
-margin/bottom = 107.0
+margin/left = 58.0
+margin/top = 115.0
+margin/right = 88.0
+margin/bottom = 161.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -598,10 +615,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 90.0
-margin/top = 61.0
-margin/right = 120.0
-margin/bottom = 107.0
+margin/left = 92.0
+margin/top = 115.0
+margin/right = 122.0
+margin/bottom = 161.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -615,10 +632,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 124.0
-margin/top = 61.0
-margin/right = 154.0
-margin/bottom = 107.0
+margin/left = 126.0
+margin/top = 115.0
+margin/right = 156.0
+margin/bottom = 161.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -632,10 +649,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 158.0
-margin/top = 61.0
-margin/right = 188.0
-margin/bottom = 107.0
+margin/left = 160.0
+margin/top = 115.0
+margin/right = 190.0
+margin/bottom = 161.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -649,10 +666,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 192.0
-margin/top = 61.0
-margin/right = 222.0
-margin/bottom = 107.0
+margin/left = 194.0
+margin/top = 115.0
+margin/right = 224.0
+margin/bottom = 161.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -666,10 +683,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 226.0
-margin/top = 61.0
-margin/right = 256.0
-margin/bottom = 107.0
+margin/left = 228.0
+margin/top = 115.0
+margin/right = 258.0
+margin/bottom = 161.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -683,10 +700,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 260.0
-margin/top = 61.0
-margin/right = 290.0
-margin/bottom = 107.0
+margin/left = 262.0
+margin/top = 115.0
+margin/right = 292.0
+margin/bottom = 161.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -700,10 +717,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 98.0
-margin/top = 368.0
-margin/right = 138.0
-margin/bottom = 408.0
+margin/left = 44.0
+margin/top = 325.0
+margin/right = 84.0
+margin/bottom = 365.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -715,10 +732,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 195.0
-margin/top = 366.0
-margin/right = 235.0
-margin/bottom = 406.0
+margin/left = 230.0
+margin/top = 326.0
+margin/right = 270.0
+margin/bottom = 366.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -730,11 +747,12 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 83.0
-margin/top = 460.0
-margin/right = 226.0
-margin/bottom = 474.0
+margin/left = 85.0
+margin/top = 22.0
+margin/right = 228.0
+margin/bottom = 36.0
 text = "Total de Pontos: 0"
+align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -745,10 +763,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 92.0
-margin/right = 320.0
-margin/bottom = 132.0
+margin/left = 2.0
+margin/top = 146.0
+margin/right = 322.0
+margin/bottom = 186.0
 
 [node name="HSeparator1" type="HSeparator" parent="."]
 
@@ -775,10 +793,10 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 129.0
-margin/top = 287.0
-margin/right = 169.0
-margin/bottom = 301.0
+margin/left = 17.0
+margin/top = 21.0
+margin/right = 57.0
+margin/bottom = 39.0
 text = "0"
 align = 1
 percent_visible = 1.0
@@ -791,10 +809,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 110.0
-margin/top = 251.0
-margin/right = 206.0
-margin/bottom = 347.0
+margin/left = 112.0
+margin/top = 296.0
+margin/right = 208.0
+margin/bottom = 392.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -855,7 +873,7 @@ margin/right = 271.0
 margin/bottom = 375.0
 popup/exclusive = true
 window/title = "Ajuda!"
-dialog/text = "Clique no play para iniciar.\nSelecione uma pergunta\naleatoriamente. Depois \nselecione uma resposta.\nEntão confirme se a resposta\ncombina com a pergunta.\nChutes são penalizados.\nResponda a todas as perguntas\npara encerrar o jog. Ganhe \npontos. Quanto mais rápido \njogar mais bonus irá ganhar."
+dialog/text = "Clique no play para iniciar.\nFaça o casamento das perguntas\ncom as respostas corretas.\nTanto faz começar selecionando\numa pergunta ou uma resposta.\nChutes são penalizados.\nResponda a todas as perguntas\npara encerrar o jogo. Ganhe \npontos. Quanto mais rápido \njogar mais bonus irá ganhar."
 dialog/hide_on_ok = true
 
 [node name="dlgnewpr" type="ConfirmationDialog" parent="Popups"]
@@ -873,6 +891,72 @@ popup/exclusive = false
 window/title = "Confirme Por Favor..."
 dialog/text = "O jogo baixou novas \nperguntas pela Internet. \nQuer reiniciar o jogo \ncom as novas perguntas\?"
 dialog/hide_on_ok = true
+
+[node name="refresh_confirm" type="ConfirmationDialog" parent="Popups"]
+
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 84.0
+margin/top = 328.0
+margin/right = 233.0
+margin/bottom = 403.0
+popup/exclusive = false
+window/title = "Confirme Por Favor..."
+dialog/text = "Deseja recarregar\n       o jogo\?"
+dialog/hide_on_ok = true
+
+[node name="SamplePlayer" type="SamplePlayer" parent="."]
+
+config/polyphony = 1
+config/samples = SubResource( 2 )
+default/volume_db = 0.0
+default/pitch_scale = 1.0
+default/pan = 0.0
+default/depth = 0.0
+default/height = 0.0
+default/filter/type = 0
+default/filter/cutoff = 5000.0
+default/filter/resonance = 1.0
+default/filter/gain = 1.0
+default/reverb_room = 2
+default/reverb_send = 0.0
+default/chorus_send = 0.0
+
+[node name="som" type="CheckButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 91.0
+margin/top = 441.0
+margin/right = 199.0
+margin/bottom = 463.0
+toggle_mode = true
+is_pressed = true
+enabled_focus_mode = 2
+shortcut = null
+text = "Som:"
+flat = false
+align = 0
+
+[node name="refresh" type="TextureButton" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 29.0
+margin/top = 437.0
+margin/right = 69.0
+margin/bottom = 477.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 24 )
 
 [connection signal="pressed" from="Container/ajuda" to="." method="_on_ajuda_pressed"]
 
@@ -893,5 +977,11 @@ dialog/hide_on_ok = true
 [connection signal="confirmed" from="Popups/dlghelp" to="." method="_on_dlghelp_confirmed"]
 
 [connection signal="confirmed" from="Popups/dlgnewpr" to="." method="_on_dlgnewpr_confirmed"]
+
+[connection signal="confirmed" from="Popups/refresh_confirm" to="." method="_on_confirm_confirmed"]
+
+[connection signal="pressed" from="som" to="." method="_on_som_pressed"]
+
+[connection signal="pressed" from="refresh" to="." method="_on_refresh_pressed"]
 
 
