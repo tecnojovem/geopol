@@ -38,7 +38,9 @@ Mostra, com muito mais ênfase, a capacidade dos nossos Jovens, que fizeram um e
 ## Google Play
 
 O aplicativo está disponível na loja de aplicativos Google Play
+
 Versão Alfa: [https://play.google.com/apps/testing/org.godotengine.geopol](https://play.google.com/apps/testing/org.godotengine.geopol)
+
 
 
 ## Como montar o arquivo de perguntas e respostas para carregar no Godot
