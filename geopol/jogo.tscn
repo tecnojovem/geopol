@@ -1,40 +1,42 @@
-[gd_scene load_steps=26 format=1]
+[gd_scene load_steps=28 format=1]
 
 [ext_resource path="res://scripts/jogo.gd" type="Script" id=1]
 [ext_resource path="res://sprites/jogo-geo-bg.png" type="Texture" id=2]
-[ext_resource path="res://sprites/R2.png" type="Texture" id=3]
-[ext_resource path="res://sprites/FUNDO.png" type="Texture" id=4]
-[ext_resource path="res://scripts/resposta.gd" type="Script" id=5]
-[ext_resource path="res://sprites/help-hi.png" type="Texture" id=6]
-[ext_resource path="res://sprites/help-lo.png" type="Texture" id=7]
-[ext_resource path="res://sprites/P2.png" type="Texture" id=8]
-[ext_resource path="res://scripts/pergunta.gd" type="Script" id=9]
-[ext_resource path="res://sprites/thumb-up.png" type="Texture" id=10]
-[ext_resource path="res://sprites/thumb-down.png" type="Texture" id=11]
-[ext_resource path="res://sprites/play.png" type="Texture" id=12]
-[ext_resource path="res://sprites/shine1.png" type="Texture" id=13]
-[ext_resource path="res://sprites/shine2.png" type="Texture" id=14]
-[ext_resource path="res://sprites/shine3.png" type="Texture" id=15]
-[ext_resource path="res://sprites/shine4.png" type="Texture" id=16]
-[ext_resource path="res://animations/star_shining.tres" type="Animation" id=17]
-[ext_resource path="res://sounds/card.wav" type="Sample" id=18]
-[ext_resource path="res://sounds/game_end.wav" type="Sample" id=19]
-[ext_resource path="res://sounds/game_start.wav" type="Sample" id=20]
-[ext_resource path="res://sounds/opt_error.wav" type="Sample" id=21]
-[ext_resource path="res://sounds/opt_ok.wav" type="Sample" id=22]
-[ext_resource path="res://sprites/refresh.png" type="Texture" id=23]
+[ext_resource path="res://fonts/perguntaeresposta.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://sprites/R2.png" type="Texture" id=4]
+[ext_resource path="res://sprites/FUNDO.png" type="Texture" id=5]
+[ext_resource path="res://scripts/resposta.gd" type="Script" id=6]
+[ext_resource path="res://sprites/help-hi.png" type="Texture" id=7]
+[ext_resource path="res://sprites/help-lo.png" type="Texture" id=8]
+[ext_resource path="res://sprites/P2.png" type="Texture" id=9]
+[ext_resource path="res://scripts/pergunta.gd" type="Script" id=10]
+[ext_resource path="res://sprites/thumb-up.png" type="Texture" id=11]
+[ext_resource path="res://sprites/thumb-down.png" type="Texture" id=12]
+[ext_resource path="res://fonts/placar.fnt" type="BitmapFont" id=13]
+[ext_resource path="res://sprites/play.png" type="Texture" id=14]
+[ext_resource path="res://sprites/shine1.png" type="Texture" id=15]
+[ext_resource path="res://sprites/shine2.png" type="Texture" id=16]
+[ext_resource path="res://sprites/shine3.png" type="Texture" id=17]
+[ext_resource path="res://sprites/shine4.png" type="Texture" id=18]
+[ext_resource path="res://animations/star_shining.tres" type="Animation" id=19]
+[ext_resource path="res://sounds/card.wav" type="Sample" id=20]
+[ext_resource path="res://sounds/game_end.wav" type="Sample" id=21]
+[ext_resource path="res://sounds/game_start.wav" type="Sample" id=22]
+[ext_resource path="res://sounds/opt_error.wav" type="Sample" id=23]
+[ext_resource path="res://sounds/opt_ok.wav" type="Sample" id=24]
+[ext_resource path="res://sprites/refresh.png" type="Texture" id=25]
 
 [sub_resource type="SpriteFrames" id=1]
 
-animations = [ { "frames":[ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ], "loop":true, "name":"default", "speed":4.0 } ]
+animations = [ { "frames":[ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ], "loop":true, "name":"default", "speed":4.0 } ]
 
 [sub_resource type="SampleLibrary" id=2]
 
-samples/card = { "db":0.0, "pitch":1.0, "sample":ExtResource( 18 ) }
-samples/game_end = { "db":0.0, "pitch":1.0, "sample":ExtResource( 19 ) }
-samples/game_start = { "db":0.0, "pitch":1.0, "sample":ExtResource( 20 ) }
-samples/opt_error = { "db":0.0, "pitch":1.0, "sample":ExtResource( 21 ) }
-samples/opt_ok = { "db":0.0, "pitch":1.0, "sample":ExtResource( 22 ) }
+samples/card = { "db":0.0, "pitch":1.0, "sample":ExtResource( 20 ) }
+samples/game_end = { "db":0.0, "pitch":1.0, "sample":ExtResource( 21 ) }
+samples/game_start = { "db":0.0, "pitch":1.0, "sample":ExtResource( 22 ) }
+samples/opt_error = { "db":0.0, "pitch":1.0, "sample":ExtResource( 23 ) }
+samples/opt_ok = { "db":0.0, "pitch":1.0, "sample":ExtResource( 24 ) }
 
 [node name="jogo" type="Node2D"]
 
@@ -95,6 +97,8 @@ margin/left = 18.0
 margin/top = 38.0
 margin/right = 293.0
 margin/bottom = 128.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.03125, 0.0297852, 0.0297852, 1 )
 text = "Uma pergunta de teste"
 align = 1
 valign = 1
@@ -129,9 +133,9 @@ margin/bottom = 46.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 5 )
+textures/normal = ExtResource( 4 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="b_res2" type="TextureButton" parent="Container/Respostas"]
 
@@ -146,9 +150,9 @@ margin/bottom = 46.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 5 )
+textures/normal = ExtResource( 4 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="b_res3" type="TextureButton" parent="Container/Respostas"]
 
@@ -163,9 +167,9 @@ margin/bottom = 46.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 5 )
+textures/normal = ExtResource( 4 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="b_res4" type="TextureButton" parent="Container/Respostas"]
 
@@ -180,9 +184,9 @@ margin/bottom = 46.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 5 )
+textures/normal = ExtResource( 4 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="b_res5" type="TextureButton" parent="Container/Respostas"]
 
@@ -197,9 +201,9 @@ margin/bottom = 46.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 5 )
+textures/normal = ExtResource( 4 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="b_res6" type="TextureButton" parent="Container/Respostas"]
 
@@ -214,9 +218,9 @@ margin/bottom = 46.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 5 )
+textures/normal = ExtResource( 4 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="b_res7" type="TextureButton" parent="Container/Respostas"]
 
@@ -231,9 +235,9 @@ margin/bottom = 46.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 5 )
+textures/normal = ExtResource( 4 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="b_res8" type="TextureButton" parent="Container/Respostas"]
 
@@ -248,9 +252,9 @@ margin/bottom = 46.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 5 )
+textures/normal = ExtResource( 4 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="b_res9" type="TextureButton" parent="Container/Respostas"]
 
@@ -265,9 +269,9 @@ margin/bottom = 96.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 5 )
+textures/normal = ExtResource( 4 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="b_res10" type="TextureButton" parent="Container/Respostas"]
 
@@ -282,9 +286,9 @@ margin/bottom = 96.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 5 )
+textures/normal = ExtResource( 4 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="b_res11" type="TextureButton" parent="Container/Respostas"]
 
@@ -299,9 +303,9 @@ margin/bottom = 96.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 5 )
+textures/normal = ExtResource( 4 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="b_res12" type="TextureButton" parent="Container/Respostas"]
 
@@ -316,9 +320,9 @@ margin/bottom = 96.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 5 )
+textures/normal = ExtResource( 4 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="b_res13" type="TextureButton" parent="Container/Respostas"]
 
@@ -333,9 +337,9 @@ margin/bottom = 96.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 5 )
+textures/normal = ExtResource( 4 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="b_res14" type="TextureButton" parent="Container/Respostas"]
 
@@ -350,9 +354,9 @@ margin/bottom = 96.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 5 )
+textures/normal = ExtResource( 4 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="b_res15" type="TextureButton" parent="Container/Respostas"]
 
@@ -367,9 +371,9 @@ margin/bottom = 96.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 5 )
+textures/normal = ExtResource( 4 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="b_res16" type="TextureButton" parent="Container/Respostas"]
 
@@ -384,9 +388,9 @@ margin/bottom = 96.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 3 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 5 )
+textures/normal = ExtResource( 4 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 6 )
 
 [node name="lbl_resposta" type="Label" parent="Container"]
 
@@ -399,6 +403,8 @@ margin/left = 18.0
 margin/top = 142.0
 margin/right = 300.0
 margin/bottom = 247.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.0195312, 0.0183105, 0.0183105, 1 )
 text = "Uma resposta de teste com tamanho grande pra ver se o label vai fazer wrapp, também para estimar quantos caracteres podem estar na pergunta"
 align = 1
 valign = 1
@@ -420,8 +426,8 @@ margin/bottom = 468.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 6 )
-textures/pressed = ExtResource( 7 )
+textures/normal = ExtResource( 7 )
+textures/pressed = ExtResource( 8 )
 params/modulate = Color( 0, 0.859375, 1, 1 )
 
 [node name="Perguntas" type="Panel" parent="Container"]
@@ -450,9 +456,9 @@ margin/bottom = 46.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 8 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 9 )
+textures/normal = ExtResource( 9 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 10 )
 
 [node name="b_per2" type="TextureButton" parent="Container/Perguntas"]
 
@@ -467,9 +473,9 @@ margin/bottom = 46.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 8 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 9 )
+textures/normal = ExtResource( 9 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 10 )
 
 [node name="b_per3" type="TextureButton" parent="Container/Perguntas"]
 
@@ -484,9 +490,9 @@ margin/bottom = 46.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 8 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 9 )
+textures/normal = ExtResource( 9 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 10 )
 
 [node name="b_per4" type="TextureButton" parent="Container/Perguntas"]
 
@@ -501,9 +507,9 @@ margin/bottom = 46.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 8 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 9 )
+textures/normal = ExtResource( 9 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 10 )
 
 [node name="b_per5" type="TextureButton" parent="Container/Perguntas"]
 
@@ -518,9 +524,9 @@ margin/bottom = 46.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 8 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 9 )
+textures/normal = ExtResource( 9 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 10 )
 
 [node name="b_per6" type="TextureButton" parent="Container/Perguntas"]
 
@@ -535,9 +541,9 @@ margin/bottom = 46.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 8 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 9 )
+textures/normal = ExtResource( 9 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 10 )
 
 [node name="b_per7" type="TextureButton" parent="Container/Perguntas"]
 
@@ -552,9 +558,9 @@ margin/bottom = 46.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 8 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 9 )
+textures/normal = ExtResource( 9 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 10 )
 
 [node name="b_per8" type="TextureButton" parent="Container/Perguntas"]
 
@@ -569,9 +575,9 @@ margin/bottom = 46.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 8 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 9 )
+textures/normal = ExtResource( 9 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 10 )
 
 [node name="b_per9" type="TextureButton" parent="Container/Perguntas"]
 
@@ -586,9 +592,9 @@ margin/bottom = 96.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 8 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 9 )
+textures/normal = ExtResource( 9 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 10 )
 
 [node name="b_per10" type="TextureButton" parent="Container/Perguntas"]
 
@@ -603,9 +609,9 @@ margin/bottom = 96.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 8 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 9 )
+textures/normal = ExtResource( 9 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 10 )
 
 [node name="b_per11" type="TextureButton" parent="Container/Perguntas"]
 
@@ -620,9 +626,9 @@ margin/bottom = 96.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 8 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 9 )
+textures/normal = ExtResource( 9 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 10 )
 
 [node name="b_per12" type="TextureButton" parent="Container/Perguntas"]
 
@@ -637,9 +643,9 @@ margin/bottom = 96.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 8 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 9 )
+textures/normal = ExtResource( 9 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 10 )
 
 [node name="b_per13" type="TextureButton" parent="Container/Perguntas"]
 
@@ -654,9 +660,9 @@ margin/bottom = 96.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 8 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 9 )
+textures/normal = ExtResource( 9 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 10 )
 
 [node name="b_per14" type="TextureButton" parent="Container/Perguntas"]
 
@@ -671,9 +677,9 @@ margin/bottom = 96.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 8 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 9 )
+textures/normal = ExtResource( 9 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 10 )
 
 [node name="b_per15" type="TextureButton" parent="Container/Perguntas"]
 
@@ -688,9 +694,9 @@ margin/bottom = 96.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 8 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 9 )
+textures/normal = ExtResource( 9 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 10 )
 
 [node name="b_per16" type="TextureButton" parent="Container/Perguntas"]
 
@@ -705,9 +711,9 @@ margin/bottom = 96.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 8 )
-textures/pressed = ExtResource( 4 )
-script/script = ExtResource( 9 )
+textures/normal = ExtResource( 9 )
+textures/pressed = ExtResource( 5 )
+script/script = ExtResource( 10 )
 
 [node name="certo" type="TextureButton" parent="." groups=[ "controle" ]]
 
@@ -722,7 +728,7 @@ margin/bottom = 365.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 10 )
+textures/normal = ExtResource( 11 )
 
 [node name="errado" type="TextureButton" parent="." groups=[ "controle" ]]
 
@@ -737,7 +743,7 @@ margin/bottom = 365.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 11 )
+textures/normal = ExtResource( 12 )
 params/modulate = Color( 1, 0, 0, 1 )
 
 [node name="placar" type="Label" parent="."]
@@ -746,10 +752,11 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 85.0
-margin/top = 22.0
-margin/right = 228.0
-margin/bottom = 36.0
+margin/left = -1.0
+margin/top = 35.0
+margin/right = 320.0
+margin/bottom = 54.0
+custom_fonts/font = ExtResource( 13 )
 text = "Total de Pontos: 0"
 align = 1
 percent_visible = 1.0
@@ -792,10 +799,12 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 17.0
-margin/top = 21.0
-margin/right = 57.0
-margin/bottom = 39.0
+margin/left = 2.0
+margin/top = 15.0
+margin/right = 318.0
+margin/bottom = 33.0
+custom_fonts/font = ExtResource( 13 )
+custom_colors/font_color = Color( 0.0117188, 0.0117188, 0.0117188, 1 )
 text = "0"
 align = 1
 percent_visible = 1.0
@@ -815,7 +824,7 @@ margin/bottom = 392.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 12 )
+textures/normal = ExtResource( 14 )
 
 [node name="p1" type="Position2D" parent="playbutton"]
 
@@ -842,7 +851,7 @@ frame = 3
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/star_shining = ExtResource( 17 )
+anims/star_shining = ExtResource( 19 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -955,7 +964,7 @@ margin/bottom = 477.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 23 )
+textures/normal = ExtResource( 25 )
 params/modulate = Color( 0, 0.835938, 1, 1 )
 
 [connection signal="pressed" from="Container/ajuda" to="." method="_on_ajuda_pressed"]
