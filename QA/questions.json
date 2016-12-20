@@ -1,26 +1,82 @@
 {
-"3": {
-	"q":"Qual é seu time", 
-	"r":"Vasco"
+"1": {
+	"q":"Qual foi o tipo de cenário que a Petrobras nasceu?", 
+	"r":"A Petrobras nasceu num cenário de monopólio estatal."
 	}, 
-"4": {
-	"q":"Qual sua cor preferida", 
-	"r":"Azul"
+"2": {
+	"q":"Em que ano Mohammed Mossadegh tomou o golpe de estado?", 
+	"r":"Em 1953."
 	}, 
-"1":{
-	"q":"Onde você nasceu", 
-	"r":"Rio de Janeiro"
+"3":{
+	"q":"Porque Mohammed Mossadegh tomou golpe de estado?", 
+	"r":"Mossadegh, havia naciolizado a indústria do petróleo no Irã em 1951, como parte de um movimento nacionalista com importantes aspectos socializantes e movimentos de descolonização do terceiro mundo."
 	}, 
-"2":{
-	"q":"Qual é seu nome", 
-	"r":"Rogério"
+"4":{
+	"q":"O que Mossadegh diria sobre a Petrobras?", 
+	"r":"Mossadegh parabenizaria o povo brasileiro pela campanha o Petróleo É Nosso e aconselharia a manter sempre a luta."
 	},
 "5":{	
-	"q":"Quais são as cores da bandeira do Brasil",
-	"r":"Verde, Amarelo, Azul e Branco"
+	"q":"Quando foi a primeira tenta de achar petróleo no Brasil?",
+	"r":"Em 1864."
 	},
 "6":{
-	"q":"Teste de inclusão de uma nova pergunta. Funcionou?",
-	"r":"Sim!!!"
+	"q":"Quando foi tirado o primeiro barril de petróleo no Brasil?",
+	"r":"Em 1897."
+	},
+"7":{
+	"q":"Quem tomou golpe de estado?",
+	"r":"Mohammed Mossadegh."
+	},
+"8":{
+	"q":"Quem criou a Petrobras?",
+	"r":"O povo brasileiro com auxílio de Getúlio Vargas."
+	},
+"9":{
+	"q":"Estratégias principais que a Petrobras conquistou em território nacional?",
+	"r":"O Controle da energia e controle da logística."
+	},
+"10":{
+	"q":"Em 1953, a Inglaterra e Estados Unidos e alguns setores Iranianos se uniram para quê?",
+	"r":"Para um golpe de estado contra o Governo do Primeiro Ministro Iraniano Mohammed Massadegh."
+	},
+"11":{
+	"q":"A Petrobras foi criada em meio de que fator histórico mundial?",
+	"r":"Na Guerra Fria onde Estados Unidos e União Soviética guerrilhavam."
+	},
+"12":{
+	"q":"Com que intuito surgiu a OPEP?",
+	"r":"Surgiu cono uma tentativa de evitar o rebaixamento dos preços do petróleo pelo cartel formado pelas petrolheiras estrangeiras."
+	},
+"13":{
+	"q":"Quais países fundaram a OPEP?",
+	"r":"Arábia Saudita, Irã, Iraque e Kwait e Venezuela."
+	},
+"14":{
+	"q":"Em que ano foi fundada a OPEP?",
+	"r":"Em 1960."
+	},
+"15":{
+	"q":"O que significa OPEP?",
+	"r":"Organização dos Países Exportadores de Petróleo."
+	},
+"16":{
+	"q":"Quais fator que acarretou a crise do petróleo?",
+	"r":"O consumo exagerado que ocorria na época em que acreditavam que o petróleo era uma fonte inesgotável."
+	},
+"17":{
+	"q":"A principal função da OPEP?",
+	"r":"É a de cartelizar ou controlar os preços do petróleo através da associação dos principais exportadores."
+	},
+"18":{
+	"q":"O que é o Pré-Sal?",
+	"r":"É uma reserva de petróleo de difícil acesso que está localizada em uma imensa camada no subsolo."
+	},
+"19":{
+	"q":"Qual a principal empresa que é denominada a maior da América Latina responsável pela exploração e produção no território nacional?",
+	"r":"A Petrobras."
+	},
+"20":{
+	"q":"O que é o Canal de Suez?",
+	"r":"É o caminho de escoamento do óleo localizado no Egito para Europa e América."
 	}
 }
