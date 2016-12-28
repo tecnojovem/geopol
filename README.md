@@ -39,7 +39,7 @@ Mostra, com muito mais ênfase, a capacidade dos nossos Jovens, que fizeram um e
 
 O aplicativo está disponível na loja de aplicativos Play Store
 
-Versão Alfa: [https://play.google.com/apps/testing/org.godotengine.geopol](https://play.google.com/apps/testing/org.godotengine.geopol)
+[https://play.google.com/store/apps/details?id=org.godotengine.geopol](https://play.google.com/store/apps/details?id=org.godotengine.geopol)
 
 
 
